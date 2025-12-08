@@ -61,7 +61,7 @@ export default function Navigation() {
         </div>
         
         {isOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-800 backdrop-blur-xl border-t border-gray-200 dark:border-gray-600 shadow-xl">
+          <div className="md:hidden absolute top-full left-0 right-0 bg-white dark:bg-gray-900 backdrop-blur-xl border-t border-gray-200 dark:border-gray-700 shadow-xl">
             <div className="px-4 py-4 space-y-1">
               {navItems.map((item) => (
                 <Link

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navigation from "./components/Navigation";
 import Analytics from "./components/Analytics";
@@ -44,19 +45,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            (function() {
-              const theme = localStorage.getItem('theme') || 'light';
-              document.documentElement.classList.add(theme);
-            })();
-          `
-        }} />
-      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script id="theme-script" strategy="beforeInteractive">
+          {`(function(){try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark')}else{document.documentElement.classList.remove('dark')}}catch(e){}})();`}
+        </Script>
         <Analytics />
         <Navigation />
         <PageTransition>

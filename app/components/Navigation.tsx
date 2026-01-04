@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import DarkModeToggle from './DarkModeToggle';
+// import DarkModeToggle from './DarkModeToggle';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -16,7 +16,7 @@ export default function Navigation() {
     { name: 'Experience', href: '/experience' },
     { name: 'Certifications', href: '/certifications' },
     // { name: 'Services', href: '/services' },
-    // { name: 'Blog', href: '/blogs' },
+    { name: 'Blog', href: '/blogs' },
     { name: 'Contact', href: '/contact' }
   ];
 
@@ -47,11 +47,11 @@ export default function Navigation() {
                 {item.name}
               </Link>
             ))}
-            <DarkModeToggle />
+            {/* <DarkModeToggle /> */}
           </div>
           
           <div className="md:hidden flex items-center space-x-2">
-            <DarkModeToggle />
+            {/* <DarkModeToggle /> */}
             <button onClick={() => setIsOpen(!isOpen)} className="p-3 text-gray-700 dark:text-gray-200 rounded-xl hover:bg-blue-50 dark:hover:bg-gray-800/60 transition-all duration-300 hover:scale-110">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />

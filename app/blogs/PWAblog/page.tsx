@@ -86,7 +86,7 @@ export default function PWABlog() {
       </button>
 
       {/* Blog Header */}
-      <header className="relative overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white py-20">
+      <header className="relative overflow-hidden bg-gradient-to-r from-blue-700 via-purple-700 to-indigo-700 text-white py-20">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-10 left-10 w-20 h-20 bg-white/10 rounded-full animate-pulse"></div>

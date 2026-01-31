@@ -9,52 +9,25 @@ export const metadata: Metadata = {
 export default function Services() {
   const services = [
     {
+      title: "AI/ML Projects",
+      description: "Intelligent solutions using machine learning, natural language processing, and computer vision to solve complex business problems",
+      icon: "🤖",
+      features: ["Machine Learning Models", "Data Analysis", "AI Integration", "Predictive Analytics"],
+      gradient: "from-purple-500 to-pink-500"
+    },
+    {
       title: "Full-Stack Web Development",
       description: "End-to-end web applications with modern frameworks, responsive design, and optimal performance",
       icon: "🌐",
       features: ["React/Next.js", "Node.js APIs", "Database Design", "Responsive UI"],
-      price: "Starting at $2,500",
       gradient: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "Mobile App Development",
-      description: "Cross-platform mobile applications with native performance and seamless user experience",
-      icon: "📱",
-      features: ["React Native", "iOS & Android", "Push Notifications", "App Store Deploy"],
-      price: "Starting at $3,500",
-      gradient: "from-purple-500 to-pink-500"
     },
     {
       title: "Backend & API Development",
       description: "Scalable server architecture, RESTful APIs, and database optimization for high-performance applications",
       icon: "⚙️",
       features: ["REST/GraphQL APIs", "Database Design", "Authentication", "Cloud Deployment"],
-      price: "Starting at $2,000",
       gradient: "from-green-500 to-teal-500"
-    },
-    {
-      title: "UI/UX Design & Development",
-      description: "User-centered design with modern interfaces, prototyping, and conversion optimization",
-      icon: "🎨",
-      features: ["Figma Design", "Prototyping", "User Research", "A/B Testing"],
-      price: "Starting at $1,500",
-      gradient: "from-orange-500 to-red-500"
-    },
-    {
-      title: "Cloud Solutions & DevOps",
-      description: "AWS infrastructure, CI/CD pipelines, monitoring, and scalable cloud architecture",
-      icon: "☁️",
-      features: ["AWS Setup", "CI/CD Pipelines", "Monitoring", "Auto Scaling"],
-      price: "Starting at $1,800",
-      gradient: "from-indigo-500 to-purple-500"
-    },
-    {
-      title: "Technical Consulting",
-      description: "Code reviews, architecture planning, performance optimization, and team mentoring",
-      icon: "💡",
-      features: ["Code Review", "Architecture Design", "Performance Audit", "Team Training"],
-      price: "$150/hour",
-      gradient: "from-pink-500 to-rose-500"
     }
   ];
 
@@ -84,9 +57,9 @@ export default function Services() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-20">
           {services.map((service, index) => (
-            <div key={index} className="group relative">
-              <div className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl hover:-translate-y-2 sm:hover:-translate-y-4 transition-all duration-700">
-                <div className="p-4 sm:p-6 lg:p-8">
+            <div key={index} className="group relative h-full">
+              <div className="bg-white dark:bg-gray-800 rounded-2xl sm:rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden hover:shadow-2xl hover:-translate-y-2 sm:hover:-translate-y-4 transition-all duration-700 h-full flex flex-col">
+                <div className="p-4 sm:p-6 lg:p-8 flex flex-col h-full">
                   <div className="flex flex-col gap-3 mb-4">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2 sm:gap-3">
@@ -95,13 +68,10 @@ export default function Services() {
                           {service.title}
                         </h3>
                       </div>
-                      <div className="bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-bold whitespace-nowrap">
-                        {service.price}
-                      </div>
                     </div>
                   </div>
                   
-                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 sm:mb-6 leading-relaxed flex-grow">
                     {service.description}
                   </p>
                   
@@ -117,7 +87,7 @@ export default function Services() {
                     </ul>
                   </div>
                   
-                  <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-semibold text-sm sm:text-base hover:shadow-xl transition-all duration-300 hover:scale-105 mt-auto">
                     Get Started
                   </button>
                 </div>
@@ -143,7 +113,7 @@ export default function Services() {
               <a href="/contact" className="bg-white text-blue-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base lg:text-lg hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl">
                 Start Your Project
               </a>
-              <a href="mailto:ananya@example.com" className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base lg:text-lg hover:bg-white/10 transition-colors duration-300">
+              <a href="mailto:ananya.shah2811@gmail.com" className="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-sm sm:text-base lg:text-lg hover:bg-white/10 transition-colors duration-300">
                 Schedule a Call
               </a>
             </div>

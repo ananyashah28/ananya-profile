@@ -21,7 +21,7 @@ export default function Contact() {
       icon: "💼",
       title: "LinkedIn",
       value: "Connect with me",
-      link: "https://linkedin.com/in/ananyashah2811",
+      link: "https://www.linkedin.com/in/ananyashah2811/",
       description: "Professional networking",
       gradient: "from-blue-600 to-blue-700"
     },

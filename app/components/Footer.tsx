@@ -7,7 +7,7 @@ export default function Footer() {
           <div className="md:col-span-2">
             <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Ananya Shah</h3>
             <p className="text-gray-400 mb-4 text-sm sm:text-base leading-relaxed">
-              Full-stack developer passionate about creating innovative web solutions and modern applications.
+              Full-stack developer and AI ML Engineer passionate about creating innovative web solutions and modern applications.
             </p>
             <div className="flex space-x-4">
               <a href="https://github.com" className="text-gray-400 hover:text-white transition-colors">

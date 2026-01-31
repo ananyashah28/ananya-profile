@@ -17,7 +17,7 @@ export default function Home() {
             
             <p className="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed max-w-4xl mx-auto">
               A passionate <span className="text-blue-600 font-semibold">Full-Stack Developer</span> and 
-              <span className="text-purple-600 font-semibold">AI Specialist</span> who loves creating 
+              <span className="text-purple-600 font-semibold"> AI ML Engineer</span> who loves creating 
               digital experiences that make a difference.
             </p>
             

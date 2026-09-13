@@ -8,7 +8,7 @@
 
 **Building with Code | Innovating with AI | Creating with Movement 💃✨**
 
-[![Portfolio Live](https://img.shields.io/badge/Website-ananya--profile.vercel.app-2563eb?style=for-the-badge&logo=vercel&logoColor=white)](https://ananya-profile.vercel.app)
+[![Portfolio Live](https://img.shields.io/badge/Website-ananyas--portfolio.vercel.app-2563eb?style=for-the-badge&logo=vercel&logoColor=white)](https://ananyas-portfolio.vercel.app)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-ananyashah2811-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ananyashah2811/)
 [![Email](https://img.shields.io/badge/Email-ananya.shah2811%40gmail.com-ea4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ananya.shah2811@gmail.com)
 
@@ -29,8 +29,8 @@
 ---
 
 ## Get to know me 🎯
-* 🌐 Take a quick peek at my [Live Portfolio Website](https://ananya-profile.vercel.app) 👈
-* 📄 Take a quick peek at my [Resume](https://ananya-profile.vercel.app/resume.pdf) 👈
+* 🌐 Take a quick peek at my [Live Portfolio Website](https://ananyas-portfolio.vercel.app) 👈
+* 📄 Take a quick peek at my [Resume](https://ananyas-portfolio.vercel.app/resume.pdf) 👈
 * 💻 Take a quick peek at my [Projects Repo](https://github.com/ananyashah28/projects) 👈 *(See [`PROJECTS.md`](https://github.com/ananyashah28/ananya-profile/blob/main/PROJECTS.md) for full repo directory)*
 * 📜 Take a quick peek at my [Certificates Repo](https://github.com/ananyashah28/certificates) 👈 *(See [`CERTIFICATIONS.md`](https://github.com/ananyashah28/ananya-profile/blob/main/CERTIFICATIONS.md) for verified credentials)*
 
@@ -113,6 +113,6 @@
 
 [![Visitor Count](https://visitcount.itsvg.in/api?id=ananyashah28&icon=0&color=2563eb)](https://visitcount.itsvg.in)
 
-*Designed with ❤️ by [Ananya Shah](https://ananya-profile.vercel.app)*
+*Designed with ❤️ by [Ananya Shah](https://ananyas-portfolio.vercel.app)*
 
 </div>

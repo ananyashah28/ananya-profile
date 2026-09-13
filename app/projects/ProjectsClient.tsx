@@ -307,7 +307,7 @@ export default function ProjectsClient() {
       category: 'Full-Stack',
       type: 'Full-Stack',
       github: 'https://github.com/ananyashah28/ananya-profile',
-      live: 'https://ananya-profile.vercel.app'
+      live: 'https://ananyas-portfolio.vercel.app'
     },
     {
       title: 'Emotion-Based Dance Music Recommendation App',

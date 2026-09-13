@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   keywords: "full-stack developer, web development, react, nextjs, portfolio, software engineer",
   authors: [{ name: "Ananya Shah" }],
   creator: "Ananya Shah",
-  metadataBase: new URL('https://ananyashah.dev'),
+  metadataBase: new URL('https://ananyas-portfolio.vercel.app'),
   alternates: {
     canonical: '/'
   },
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://ananyashah.dev",
+    url: "https://ananyas-portfolio.vercel.app",
     title: "Ananya Shah - Full-Stack Developer",
     description: "Full-stack developer passionate about creating innovative web solutions",
     siteName: "Ananya Shah Portfolio",

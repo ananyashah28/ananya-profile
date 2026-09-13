@@ -59,5 +59,5 @@ A comprehensive directory of all verified professional certifications and job si
 
 - **GitHub Profile**: [https://github.com/ananyashah28](https://github.com/ananyashah28)
 - **LinkedIn**: [https://www.linkedin.com/in/ananyashah2811/](https://www.linkedin.com/in/ananyashah2811/)
-- **Live Portfolio**: [https://ananya-profile.vercel.app](https://ananya-profile.vercel.app)
+- **Live Portfolio**: [https://ananyas-portfolio.vercel.app](https://ananyas-portfolio.vercel.app)
 - **Email**: [ananya.shah2811@gmail.com](mailto:ananya.shah2811@gmail.com)

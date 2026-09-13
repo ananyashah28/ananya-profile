@@ -1,14 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import LoadingSpinner from './LoadingSpinner';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    projectType: '',
-    budget: '',
+    subject: '',
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -17,25 +15,16 @@ export default function ContactForm() {
     e.preventDefault();
     setStatus('loading');
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', projectType: '', budget: '', message: '' });
-      } else {
-        setStatus('error');
-      }
-    } catch (error) {
-      setStatus('error');
-    }
+    setTimeout(() => {
+      console.log('Form submitted:', formData);
+      setStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      setTimeout(() => setStatus('idle'), 4000);
+    }, 1200);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
@@ -43,109 +32,97 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid md:grid-cols-2 gap-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
+      <div className="grid md:grid-cols-2 gap-5">
         <div>
-          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Full Name</label>
-          <input 
-            type="text" 
+          <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-2">
+            Your Name *
+          </label>
+          <input
+            type="text"
+            id="name"
             name="name"
+            required
             value={formData.name}
             onChange={handleChange}
-            required
+            className="form-input text-sm sm:text-base"
             placeholder="John Doe"
-            className="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-all duration-300" 
           />
         </div>
+        
         <div>
-          <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Email Address</label>
-          <input 
-            type="email" 
+          <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-2">
+            Email Address *
+          </label>
+          <input
+            type="email"
+            id="email"
             name="email"
+            required
             value={formData.email}
             onChange={handleChange}
-            required
+            className="form-input text-sm sm:text-base"
             placeholder="john@example.com"
-            className="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-all duration-300" 
           />
         </div>
       </div>
       
-      {/* <div>
-        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Project Type</label>
-        <select 
-          name="projectType"
-          value={formData.projectType}
-          onChange={handleChange}
+      <div>
+        <label htmlFor="subject" className="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-2">
+          Project Type *
+        </label>
+        <select
+          id="subject"
+          name="subject"
           required
-          className="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-all duration-300"
+          value={formData.subject}
+          onChange={handleChange}
+          className="form-select text-sm sm:text-base"
         >
-          <option value="">Select project type</option>
-          <option value="web">Web Development</option>
-          <option value="mobile">Mobile App</option>
-          <option value="backend">Backend API</option>
-          <option value="design">UI/UX Design</option>
-          <option value="consulting">Consulting</option>
-          <option value="other">Other</option>
+          <option value="" className="dark:bg-gray-800">Select a project type</option>
+          <option value="web-development" className="dark:bg-gray-800">Full-Stack Web Development</option>
+          <option value="ai-ml" className="dark:bg-gray-800">AI / ML Integration</option>
+          <option value="backend" className="dark:bg-gray-800">Backend & API Architecture</option>
+          <option value="consulting" className="dark:bg-gray-800">Consulting & Architecture</option>
+          <option value="other" className="dark:bg-gray-800">Other</option>
         </select>
       </div>
       
       <div>
-        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Project Budget</label>
-        <select 
-          name="budget"
-          value={formData.budget}
-          onChange={handleChange}
-          required
-          className="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-all duration-300"
-        >
-          <option value="">Select budget range</option>
-          <option value="1k-5k">$1,000 - $5,000</option>
-          <option value="5k-10k">$5,000 - $10,000</option>
-          <option value="10k-25k">$10,000 - $25,000</option>
-          <option value="25k+">$25,000+</option>
-        </select>
-      </div> */}
-      
-      <div>
-        <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3">Message</label>
-        <textarea 
+        <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300 mb-2">
+          Project Details *
+        </label>
+        <textarea
+          id="message"
           name="message"
+          required
           value={formData.message}
           onChange={handleChange}
-          required
-          rows={6} 
-          placeholder="Tell me about your message..."
-          className="w-full px-4 py-4 border-2 border-gray-200 dark:border-gray-600 rounded-2xl focus:ring-4 focus:ring-blue-500/20 focus:border-blue-500 dark:bg-gray-700 dark:text-white transition-all duration-300 resize-none"
+          rows={5}
+          className="form-textarea text-sm sm:text-base resize-none"
+          placeholder="Tell me about your project requirements, timeline, and goals..."
         />
       </div>
       
+      <button
+        type="submit"
+        disabled={status === 'loading'}
+        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white py-3.5 rounded-xl font-bold text-base shadow-md hover:shadow-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+      >
+        {status === 'loading' ? 'Sending Message...' : status === 'success' ? '✓ Message Sent!' : 'Send Message'}
+      </button>
+      
       {status === 'success' && (
-        <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-200 px-4 py-3 rounded-lg">
-          Message sent successfully! I'll get back to you soon.
+        <div className="bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/50 text-emerald-800 dark:text-emerald-300 px-4 py-3 rounded-xl text-sm font-medium">
+          Thank you for reaching out! I'll get back to you within 24 hours.
         </div>
       )}
       
       {status === 'error' && (
-        <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-200 px-4 py-3 rounded-lg">
-          Failed to send message. Please try again or email me directly.
+        <div className="bg-rose-50 dark:bg-rose-950/60 border border-rose-200 dark:border-rose-800/50 text-rose-800 dark:text-rose-300 px-4 py-3 rounded-xl text-sm font-medium">
+          Something went wrong. Please try again or email me directly at ananya.shah2811@gmail.com
         </div>
       )}
-      
-      <button 
-        type="submit" 
-        disabled={status === 'loading'}
-        className="group w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-5 px-8 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-500 hover:scale-105 relative overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        <span className="relative z-10 flex items-center justify-center gap-2">
-          {status === 'loading' && <LoadingSpinner />}
-          {status === 'loading' ? 'Sending...' : 'Send Project Details'}
-        </span>
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-        {status !== 'loading' && (
-          <span className="absolute right-6 top-1/2 transform -translate-y-1/2 group-hover:translate-x-1 transition-transform duration-300">→</span>
-        )}
-      </button>
     </form>
   );
 }

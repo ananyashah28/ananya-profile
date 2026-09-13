@@ -1,11 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import SocialShare from '@/app/components/SocialShare';
+import ViewCounter from '@/app/components/ViewCounter';
+import Comments from '@/app/components/Comments';
 
 export default function PWABlog() {
   const [activeSection, setActiveSection] = useState('intro');
   const [readingProgress, setReadingProgress] = useState(0);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const sections = [
     { id: 'intro', title: 'Introduction', icon: '🚀' },
@@ -18,20 +20,6 @@ export default function PWABlog() {
   ];
 
   useEffect(() => {
-    // Check for dark mode
-    const checkDarkMode = () => {
-      setIsDarkMode(document.documentElement.classList.contains('dark'));
-    };
-    
-    checkDarkMode();
-    
-    // Listen for theme changes
-    const observer = new MutationObserver(checkDarkMode);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
-
     const handleScroll = () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       const progress = (window.scrollY / totalHeight) * 100;
@@ -56,7 +44,6 @@ export default function PWABlog() {
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      observer.disconnect();
     };
   }, []);
 
@@ -116,7 +103,12 @@ export default function PWABlog() {
             </div>
             <div className="hidden md:flex items-center space-x-4 text-sm opacity-75">
               <span>📅 January 4, 2026</span>
+              <span>•</span>
+              <ViewCounter slug="PWAblog" />
             </div>
+          </div>
+          <div className="mt-6">
+            <SocialShare title="Engineering a White-Label PWA Engine" url="https://ananyashah.dev/blogs/PWAblog" />
           </div>
         </div>
       </header>
@@ -126,7 +118,7 @@ export default function PWABlog() {
           {/* Enhanced Table of Contents */}
           <aside className="lg:w-1/4">
             <div className="sticky top-8">
-              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-gray-200/50 dark:border-gray-700/50" style={isDarkMode ? { backgroundColor: 'rgba(31, 41, 55, 0.8)', borderColor: 'rgba(55, 65, 81, 0.5)' } : {}}>
+              <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-gray-200/50 dark:border-gray-700/50">
                 <h3 className="font-bold text-gray-900 dark:text-white mb-6 flex items-center">
                   <span className="text-lg mr-2">📋</span>
                   Table of Contents
@@ -173,7 +165,7 @@ export default function PWABlog() {
 
           {/* Enhanced Main Content */}
           <main className="lg:w-3/4">
-            <article className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden" style={isDarkMode ? { backgroundColor: 'rgba(31, 41, 55, 0.9)', borderColor: 'rgba(55, 65, 81, 0.5)' } : {}}>
+            <article className="bg-white/90 dark:bg-gray-800/90 backdrop-blur-xl rounded-3xl shadow-2xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden">
               <div className="p-8 md:p-12">
                 {/* Introduction */}
                 <section id="intro" className="mb-20">
@@ -188,13 +180,13 @@ export default function PWABlog() {
                   <div className="prose prose-lg dark:prose-invert max-w-none">
                     <h2 className="text-3xl font-bold mb-6 flex items-center">
                       <span className="mr-3">🎯</span>
-                      <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent" style={isDarkMode ? { background: 'linear-gradient(to right, #f9fafb, #d1d5db)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' } : {}}>The Architecture Challenge</span>
+                      <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">The Architecture Challenge</span>
                     </h2>
-                    <p className="text-xl leading-relaxed mb-6">
+                    <p className="text-xl leading-relaxed mb-6 text-gray-700 dark:text-gray-300">
                       In the modern product landscape, users expect fast load times, offline access, and a native-like experience—without the friction of an app store. Progressive Web Apps (PWAs) are the standard solution, but traditional PWA architecture fails when serving thousands of independent business tenants from a single codebase.
                     </p>
-                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-6 border-l-4 border-blue-500" style={isDarkMode ? { background: 'rgba(31, 41, 55, 0.8)', borderColor: '#3b82f6' } : {}}>
-                      <p className="text-lg font-medium" style={isDarkMode ? { color: '#f9fafb' } : {}}>
+                    <div className="bg-blue-100 dark:bg-blue-900/50 rounded-2xl p-6 border-l-4 border-blue-500">
+                      <p className="text-lg font-medium text-gray-900 dark:text-gray-100">
                         <strong>By implementing a White-Label PWA Engine</strong>, a single web application can be dynamically transformed into thousands of uniquely branded, installable mobile experiences. This approach handles identity resolution, branding, and security isolation at scale.
                       </p>
                     </div>
@@ -206,11 +198,11 @@ export default function PWABlog() {
                   <div className="prose prose-lg dark:prose-invert max-w-none">
                     <h2 className="text-3xl font-bold mb-8 flex items-center">
                       <span className="mr-3">❓</span>
-                      <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent" style={isDarkMode ? { background: 'linear-gradient(to right, #f9fafb, #d1d5db)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' } : {}}>Part 1: Strategic Impact — Why PWAs?</span>
+                      <span className="bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">Part 1: Strategic Impact — Why PWAs?</span>
                     </h2>
                     
                     <div className="grid md:grid-cols-2 gap-6 mb-8">
-                      <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-2xl p-8 border border-blue-200 dark:border-blue-700 hover:shadow-xl transition-all duration-300" style={isDarkMode ? { backgroundColor: 'rgba(30, 58, 138, 0.2)', borderColor: '#1d4ed8' } : {}}>
+                      <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:bg-gradient-to-br dark:from-blue-900/40 dark:to-blue-800/40 rounded-2xl p-8 border border-blue-200 dark:border-blue-700 hover:shadow-xl transition-all duration-300">
                         <div className="flex items-center mb-4">
                           <span className="text-2xl mr-3">🚀</span>
                           <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">Bypassing Native App Friction</h3>
@@ -242,7 +234,7 @@ export default function PWABlog() {
                         </div>
                       </div>
                       
-                      <div className="bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-2xl p-8 border border-yellow-200 dark:border-yellow-700 hover:shadow-xl transition-all duration-300">
+                      <div className="bg-gradient-to-br from-yellow-50 to-orange-50 dark:bg-gradient-to-br dark:from-yellow-900/40 dark:to-orange-900/40 rounded-2xl p-8 border border-yellow-200 dark:border-yellow-700 hover:shadow-xl transition-all duration-300">
                         <div className="flex items-center mb-4">
                           <span className="text-2xl mr-3">🔄</span>
                           <h3 className="text-xl font-bold text-gray-900 dark:text-gray-100">The Shift from "Static" to "Dynamic"</h3>
@@ -264,14 +256,14 @@ export default function PWABlog() {
                       <span className="text-gray-900 dark:text-white font-bold">Part 2: System Architecture Overview</span>
                     </h2>
                     
-                    <div className="bg-indigo-100 dark:bg-indigo-900/30 rounded-2xl p-8 border-l-4 border-indigo-500 mb-8">
+                    <div className="bg-indigo-100 dark:bg-indigo-900/50 rounded-2xl p-8 border-l-4 border-indigo-500 mb-8">
                       <p className="text-lg font-medium mb-4 text-gray-900 dark:text-gray-100">
                         The core principle of this engine is <strong>Identity Resolution at the Edge</strong>. Every incoming request must identify the tenant context before the application logic executes.
                       </p>
                     </div>
                     
-                    <h3 className="text-2xl font-semibold mb-6">Multi-Tenant Entry Patterns</h3>
-                    <p className="text-lg mb-6">The architecture supports three primary access patterns:</p>
+                    <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Multi-Tenant Entry Patterns</h3>
+                    <p className="text-lg mb-6 text-gray-700 dark:text-gray-300">The architecture supports three primary access patterns:</p>
                     
                     <div className="grid md:grid-cols-3 gap-6 my-8">
                       <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
@@ -299,11 +291,11 @@ export default function PWABlog() {
                       </div>
                     </div>
                     
-                    <h3 className="text-2xl font-semibold mb-6">Edge Middleware + Context Injection</h3>
-                    <p className="mb-4">By implementing Edge Middleware, requests are intercepted at the network perimeter.</p>
+                    <h3 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-white">Edge Middleware + Context Injection</h3>
+                    <p className="mb-4 text-gray-700 dark:text-gray-300">By implementing Edge Middleware, requests are intercepted at the network perimeter.</p>
                     
                     <div className="grid md:grid-cols-2 gap-6">
-                      <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6">
+                      <div className="bg-blue-50 dark:bg-blue-900/30 rounded-xl p-6">
                         <h4 className="font-bold mb-3 flex items-center text-gray-900 dark:text-gray-100">
                           <span className="text-lg mr-2">⚙️</span>
                           The Process
@@ -311,7 +303,7 @@ export default function PWABlog() {
                         <p className="text-sm text-gray-700 dark:text-gray-300">The middleware inspects the hostname, resolves the tenant identity from a high-speed cache or database, and injects contextual headers into the request.</p>
                       </div>
                       
-                      <div className="bg-green-50 dark:bg-green-900/20 rounded-xl p-6">
+                      <div className="bg-green-50 dark:bg-green-900/30 rounded-xl p-6">
                         <h4 className="font-bold mb-3 flex items-center text-gray-900 dark:text-gray-100">
                           <span className="text-lg mr-2">✅</span>
                           The Result
@@ -331,8 +323,8 @@ export default function PWABlog() {
                     
                     <div className="space-y-10">
                       {/* Challenge 1 */}
-                      <div className="bg-gradient-to-r from-red-50 to-pink-50 dark:from-red-900/20 dark:to-pink-900/20 rounded-2xl p-8 border-l-4 border-red-500">
-                        <h3 className="text-xl font-bold mb-4 flex items-center">
+                      <div className="bg-gradient-to-r from-red-50 to-pink-50 dark:bg-gradient-to-r dark:from-red-900/40 dark:to-pink-900/40 rounded-2xl p-8 border-l-4 border-red-500">
+                        <h3 className="text-xl font-bold mb-4 flex items-center text-gray-900 dark:text-white">
                           <span className="text-2xl mr-3">📱</span>
                           1. Standardizing iOS "Standalone" Behavior
                         </h3>
@@ -340,22 +332,22 @@ export default function PWABlog() {
                         <div className="grid md:grid-cols-3 gap-6 mb-6">
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <h4 className="font-semibold text-red-600 dark:text-red-400 mb-2">The Challenge:</h4>
-                            <p className="text-sm">iOS Safari is restrictive, often ignoring manifest theme colors and omitting system navigation controls in standalone mode.</p>
+                            <p className="text-sm text-gray-700 dark:text-gray-300">iOS Safari is restrictive, often ignoring manifest theme colors and omitting system navigation controls in standalone mode.</p>
                           </div>
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <h4 className="font-semibold text-blue-600 dark:text-blue-400 mb-2">The Solution:</h4>
-                            <p className="text-sm">By building a platform-detection layer, the application can programmatically identify if it is running in "Standalone" (installed) mode or within a standard browser.</p>
+                            <p className="text-sm text-gray-700 dark:text-gray-300">By building a platform-detection layer, the application can programmatically identify if it is running in "Standalone" (installed) mode or within a standard browser.</p>
                           </div>
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">The Result:</h4>
-                            <p className="text-sm">When the app detects it is installed, the layout dynamically injects a custom, branded navigation bar optimized for touch-first interactions. This ensures users never feel "trapped" and provides a premium native-like feel.</p>
+                            <p className="text-sm text-gray-700 dark:text-gray-300">When the app detects it is installed, the layout dynamically injects a custom, branded navigation bar optimized for touch-first interactions. This ensures users never feel "trapped" and provides a premium native-like feel.</p>
                           </div>
                         </div>
                       </div>
                       
                       {/* Challenge 2 */}
-                      <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-2xl p-8 border-l-4 border-yellow-500">
-                        <h3 className="text-xl font-bold mb-4 flex items-center">
+                      <div className="bg-gradient-to-r from-yellow-50 to-orange-50 dark:bg-gradient-to-r dark:from-yellow-900/40 dark:to-orange-900/40 rounded-2xl p-8 border-l-4 border-yellow-500">
+                        <h3 className="text-xl font-bold mb-4 flex items-center text-gray-900 dark:text-white">
                           <span className="text-2xl mr-3">👻</span>
                           2. Eliminating Manifest Caching ("Ghost Branding")
                         </h3>
@@ -363,22 +355,22 @@ export default function PWABlog() {
                         <div className="grid md:grid-cols-3 gap-6 mb-6">
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <h4 className="font-semibold text-red-600 dark:text-red-400 mb-2">The Challenge:</h4>
-                            <p className="text-sm">Browsers aggressively cache the PWA manifest, meaning logo or name updates may not appear for weeks even after a tenant changes their branding.</p>
+                            <p className="text-sm text-gray-700 dark:text-gray-300">Browsers aggressively cache the PWA manifest, meaning logo or name updates may not appear for weeks even after a tenant changes their branding.</p>
                           </div>
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <h4 className="font-semibold text-blue-600 dark:text-blue-400 mb-2">The Solution:</h4>
-                            <p className="text-sm">By dynamically versioning the manifest URL in the document metadata.</p>
+                            <p className="text-sm text-gray-700 dark:text-gray-300">By dynamically versioning the manifest URL in the document metadata.</p>
                           </div>
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">The Result:</h4>
-                            <p className="text-sm">By appending a versioning hash to the manifest link, a "cache-busting" effect is created. This ensures the browser fetches the absolute latest branding the moment a user initiates an installation.</p>
+                            <p className="text-sm text-gray-700 dark:text-gray-300">By appending a versioning hash to the manifest link, a "cache-busting" effect is created. This ensures the browser fetches the absolute latest branding the moment a user initiates an installation.</p>
                           </div>
                         </div>
                       </div>
                       
                       {/* Challenge 3 */}
-                      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl p-8 border-l-4 border-blue-500">
-                        <h3 className="text-xl font-bold mb-4 flex items-center">
+                      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:bg-gradient-to-r dark:from-blue-900/40 dark:to-indigo-900/40 rounded-2xl p-8 border-l-4 border-blue-500">
+                        <h3 className="text-xl font-bold mb-4 flex items-center text-gray-900 dark:text-white">
                           <span className="text-2xl mr-3">🎨</span>
                           3. Automating Branding via Image Pipelines
                         </h3>
@@ -386,11 +378,11 @@ export default function PWABlog() {
                         <div className="grid md:grid-cols-3 gap-6 mb-6">
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <h4 className="font-semibold text-red-600 dark:text-red-400 mb-2">The Challenge:</h4>
-                            <p className="text-sm">Manually designing dozens of icon sizes for thousands of tenants is impossible.</p>
+                            <p className="text-sm text-gray-700 dark:text-gray-300">Manually designing dozens of icon sizes for thousands of tenants is impossible.</p>
                           </div>
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <h4 className="font-semibold text-blue-600 dark:text-blue-400 mb-2">The Solution:</h4>
-                            <p className="text-sm">By implementing an automated pipeline using image processing libraries:</p>
+                            <p className="text-sm text-gray-700 dark:text-gray-300">By implementing an automated pipeline using image processing libraries:</p>
                             <ul className="text-xs mt-2 space-y-1">
                               <li>• <strong>Logo Processing:</strong> Uploaded logos are automatically converted into all required PWA icon dimensions.</li>
                               <li>• <strong>Dynamic Fallbacks:</strong> If no logo exists, high-fidelity icons are generated using tenant initials and brand colors via SVG-to-PNG templates.</li>
@@ -398,7 +390,7 @@ export default function PWABlog() {
                           </div>
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <h4 className="font-semibold text-green-600 dark:text-green-400 mb-2">The Result:</h4>
-                            <p className="text-sm">Fully automated branding pipeline that scales to thousands of tenants without manual intervention.</p>
+                            <p className="text-sm text-gray-700 dark:text-gray-300">Fully automated branding pipeline that scales to thousands of tenants without manual intervention.</p>
                           </div>
                         </div>
                       </div>
@@ -415,18 +407,18 @@ export default function PWABlog() {
                     
                     <div className="space-y-8">
                       {/* Security Section */}
-                      <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-2xl p-8 border border-red-200 dark:border-red-700">
-                        <h3 className="text-xl font-bold mb-6 flex items-center">
+                      <div className="bg-gradient-to-r from-red-50 to-orange-50 dark:bg-gradient-to-r dark:from-red-900/40 dark:to-orange-900/40 rounded-2xl p-8 border border-red-200 dark:border-red-700">
+                        <h3 className="text-xl font-bold mb-6 flex items-center text-gray-900 dark:text-white">
                           <span className="text-2xl mr-3">🛡️</span>
                           Preventing Cross-Tenant Data Leakage
                         </h3>
-                        <p className="mb-6">In a shared browser environment, the Service Worker must act as a gatekeeper. By implementing these safeguards, data integrity is maintained:</p>
+                        <p className="mb-6 text-gray-700 dark:text-gray-300">In a shared browser environment, the Service Worker must act as a gatekeeper. By implementing these safeguards, data integrity is maintained:</p>
                         
                         <div className="grid md:grid-cols-3 gap-4">
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <div className="flex items-center mb-3">
                               <span className="text-lg mr-2">🔑</span>
-                              <h4 className="font-semibold">Tenant-Scoped Cache Keys</h4>
+                              <h4 className="font-semibold text-gray-900 dark:text-white">Tenant-Scoped Cache Keys</h4>
                             </div>
                             <p className="text-sm text-gray-600 dark:text-gray-400">Every cached asset is prefixed with a unique ID to prevent cross-tenant data bleed.</p>
                           </div>
@@ -434,7 +426,7 @@ export default function PWABlog() {
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <div className="flex items-center mb-3">
                               <span className="text-lg mr-2">🌐</span>
-                              <h4 className="font-semibold">Explicit Network-Only Routes</h4>
+                              <h4 className="font-semibold text-gray-900 dark:text-white">Explicit Network-Only Routes</h4>
                             </div>
                             <p className="text-sm text-gray-600 dark:text-gray-400">Sensitive authentication and identity endpoints are strictly excluded from the service worker cache.</p>
                           </div>
@@ -442,7 +434,7 @@ export default function PWABlog() {
                           <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-4">
                             <div className="flex items-center mb-3">
                               <span className="text-lg mr-2">🔄</span>
-                              <h4 className="font-semibold">Lifecycle Cleanup</h4>
+                              <h4 className="font-semibold text-gray-900 dark:text-white">Lifecycle Cleanup</h4>
                             </div>
                             <p className="text-sm text-gray-600 dark:text-gray-400">Using service worker lifecycle events to purge stale tenant data ensures safe usage on shared devices.</p>
                           </div>
@@ -450,13 +442,13 @@ export default function PWABlog() {
                       </div>
                       
                       {/* Performance Section */}
-                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-2xl p-8 border border-green-200 dark:border-green-700">
-                        <h3 className="text-xl font-bold mb-6 flex items-center">
+                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:bg-gradient-to-r dark:from-green-900/40 dark:to-emerald-900/40 rounded-2xl p-8 border border-green-200 dark:border-green-700">
+                        <h3 className="text-xl font-bold mb-6 flex items-center text-gray-900 dark:text-white">
                           <span className="text-2xl mr-3">⚡</span>
                           Achieving Sub-200ms Perceived Loads
                         </h3>
                         <div className="bg-white/50 dark:bg-gray-800/50 rounded-lg p-6">
-                          <p className="text-lg">By implementing <strong>Predictive Prefetching</strong> inside the Service Worker, the app anticipates user movement. While a user is on the Login page, the system silently background-loads the core assets for that specific tenant context, making transitions feel instantaneous.</p>
+                          <p className="text-lg text-gray-700 dark:text-gray-300">By implementing <strong>Predictive Prefetching</strong> inside the Service Worker, the app anticipates user movement. While a user is on the Login page, the system silently background-loads the core assets for that specific tenant context, making transitions feel instantaneous.</p>
                         </div>
                       </div>
                     </div>
@@ -470,7 +462,7 @@ export default function PWABlog() {
                       📊 Summary of Impact
                     </h2>
                     
-                    <div className="bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 dark:from-green-900/20 dark:via-emerald-900/20 dark:to-teal-900/20 rounded-3xl p-8 border border-green-200 dark:border-green-700">
+                    <div className="bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50 dark:bg-gradient-to-r dark:from-green-900/40 dark:via-emerald-900/40 dark:to-teal-900/40 rounded-3xl p-8 border border-green-200 dark:border-green-700">
                       <div className="overflow-x-auto">
                         <table className="w-full text-left border-collapse">
                           <thead>
@@ -515,8 +507,8 @@ export default function PWABlog() {
                       💡 Final Thoughts
                     </h2>
                     
-                    <div className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-900/20 dark:to-purple-900/20 rounded-2xl p-8 border-l-4 border-indigo-500">
-                      <p className="text-lg leading-relaxed">
+                    <div className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:bg-gradient-to-r dark:from-indigo-900/40 dark:to-purple-900/40 rounded-2xl p-8 border-l-4 border-indigo-500">
+                      <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
                         PWAs are no longer just "lighter alternatives" to native apps. By architecting at the request level, they become first-class application platforms that scale to thousands of tenants with zero additional deployment overhead. This approach proves that the open web can provide the same premium, branded experience as any proprietary app store.
                       </p>
                     </div>
@@ -524,6 +516,10 @@ export default function PWABlog() {
                 </section>
               </div>
             </article>
+            
+            <div className="mt-12">
+              <Comments />
+            </div>
           </main>
         </div>
       </div>

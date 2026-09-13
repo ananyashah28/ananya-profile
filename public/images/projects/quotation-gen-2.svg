@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061c29"/>
+      <stop offset="50%" stop-color="#0f2b46"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg2)"/>
+  <rect x="50" y="40" width="1100" height="595" rx="20" fill="#0f172a" fill-opacity="0.85" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Window bar -->
+  <rect x="50" y="40" width="1100" height="48" rx="20" fill="#020617"/>
+  <circle cx="85" cy="64" r="7" fill="#ef4444"/>
+  <circle cx="110" cy="64" r="7" fill="#eab308"/>
+  <circle cx="135" cy="64" r="7" fill="#22c55e"/>
+  <text x="600" y="70" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="14" font-weight="600">Quotation Generation • Tier Classification & Custom Feature Matrix</text>
+  
+  <text x="90" y="130" fill="#f8fafc" font-family="sans-serif" font-size="22" font-weight="bold">Product Recommendation & Feature Classification</text>
+  <text x="90" y="160" fill="#94a3b8" font-family="sans-serif" font-size="14">Generative AI automatically matches requested client modules with package tiers</text>
+  
+  <!-- Comparison Cards Grid -->
+  <rect x="90" y="190" width="330" height="410" rx="16" fill="#1e293b" fill-opacity="0.7" stroke="#334155" stroke-width="1.5"/>
+  <text x="120" y="235" fill="#a5b4fc" font-family="sans-serif" font-size="18" font-weight="bold">Basic Tier Package</text>
+  <text x="120" y="275" fill="#ffffff" font-family="sans-serif" font-size="28" font-weight="bold">$1,200</text>
+  <line x1="120" y1="300" x2="390" y2="300" stroke="#334155" stroke-width="1"/>
+  <text x="120" y="335" fill="#cbd5e1" font-family="sans-serif" font-size="13">✓ Standard User Interface</text>
+  <text x="120" y="370" fill="#cbd5e1" font-family="sans-serif" font-size="13">✓ 5 Core Modules</text>
+  <text x="120" y="405" fill="#cbd5e1" font-family="sans-serif" font-size="13">✓ Email Support</text>
+  <text x="120" y="440" fill="#64748b" font-family="sans-serif" font-size="13">✗ Custom AI Recommendations</text>
+  
+  <rect x="435" y="190" width="330" height="410" rx="16" fill="#2e1065" fill-opacity="0.7" stroke="#a855f7" stroke-width="2"/>
+  <rect x="435" y="190" width="330" height="35" rx="16" fill="#a855f7"/>
+  <text x="600" y="213" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="bold">★ RECOMMENDED TIER</text>
+  <text x="465" y="260" fill="#e9d5ff" font-family="sans-serif" font-size="18" font-weight="bold">Standard Tier Package</text>
+  <text x="465" y="300" fill="#ffffff" font-family="sans-serif" font-size="28" font-weight="bold">$2,800</text>
+  <line x1="465" y1="325" x2="735" y2="325" stroke="#581c87" stroke-width="1"/>
+  <text x="465" y="360" fill="#f3e8ff" font-family="sans-serif" font-size="13">✓ Responsive Next.js Web App</text>
+  <text x="465" y="395" fill="#f3e8ff" font-family="sans-serif" font-size="13">✓ AI Quotation Generator</text>
+  <text x="465" y="430" fill="#f3e8ff" font-family="sans-serif" font-size="13">✓ Vector Search Matching</text>
+  <text x="465" y="465" fill="#f3e8ff" font-family="sans-serif" font-size="13">✓ Instant PDF Exporting</text>
+  
+  <rect x="780" y="190" width="330" height="410" rx="16" fill="#064e3b" fill-opacity="0.6" stroke="#10b981" stroke-width="1.5"/>
+  <text x="810" y="235" fill="#a7f3d0" font-family="sans-serif" font-size="18" font-weight="bold">Premium Tier Package</text>
+  <text x="810" y="275" fill="#ffffff" font-family="sans-serif" font-size="28" font-weight="bold">$4,500</text>
+  <line x1="810" y1="300" x2="1080" y2="300" stroke="#047857" stroke-width="1"/>
+  <text x="810" y="335" fill="#d1fae5" font-family="sans-serif" font-size="13">✓ All Standard Features</text>
+  <text x="810" y="370" fill="#d1fae5" font-family="sans-serif" font-size="13">✓ Priority Cloud Infrastructure</text>
+  <text x="810" y="405" fill="#d1fae5" font-family="sans-serif" font-size="13">✓ Custom Enterprise API</text>
+  <text x="810" y="440" fill="#d1fae5" font-family="sans-serif" font-size="13">✓ Dedicated 24/7 SLA</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14061f"/>
+      <stop offset="50%" stop-color="#2d0b4e"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="accent3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg3)"/>
+  <rect x="50" y="40" width="1100" height="595" rx="20" fill="#0f172a" fill-opacity="0.9" stroke="#334155" stroke-width="2"/>
+  
+  <!-- Window bar -->
+  <rect x="50" y="40" width="1100" height="48" rx="20" fill="#090d16"/>
+  <circle cx="85" cy="64" r="7" fill="#ef4444"/>
+  <circle cx="110" cy="64" r="7" fill="#eab308"/>
+  <circle cx="135" cy="64" r="7" fill="#22c55e"/>
+  <text x="600" y="70" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="14" font-weight="600">Quotation Generation • Export & Award Recognition</text>
+  
+  <!-- PDF Preview Box -->
+  <rect x="120" y="110" width="450" height="490" rx="14" fill="#1e293b" stroke="#475569" stroke-width="1.5"/>
+  <rect x="150" y="140" width="390" height="50" rx="8" fill="#334155"/>
+  <text x="170" y="170" fill="#ffffff" font-family="sans-serif" font-size="16" font-weight="bold">📄 OFFICIAL_QUOTATION_2025.PDF</text>
+  
+  <rect x="150" y="210" width="390" height="320" rx="8" fill="#0f172a"/>
+  <text x="170" y="245" fill="#a5b4fc" font-family="sans-serif" font-size="13" font-weight="bold">QUOTATION SUMMARY</text>
+  <text x="170" y="275" fill="#cbd5e1" font-family="sans-serif" font-size="12">Client: Enterprise Corp Inc.</text>
+  <text x="170" y="295" fill="#cbd5e1" font-family="sans-serif" font-size="12">Generated via: SentenceTransformer Model</text>
+  <text x="170" y="315" fill="#cbd5e1" font-family="sans-serif" font-size="12">Total Estimated Budget: $2,800 USD</text>
+  
+  <rect x="170" y="345" width="350" height="150" rx="6" fill="#1e293b"/>
+  <text x="185" y="375" fill="#94a3b8" font-family="sans-serif" font-size="11">Itemized Breakdown:</text>
+  <text x="185" y="400" fill="#f8fafc" font-family="sans-serif" font-size="12">• Gen-AI Parsing Engine — $1,000</text>
+  <text x="185" y="425" fill="#f8fafc" font-family="sans-serif" font-size="12">• React / Flask Full-Stack — $1,200</text>
+  <text x="185" y="450" fill="#f8fafc" font-family="sans-serif" font-size="12">• jsPDF Auto-Exporter — $600</text>
+  
+  <rect x="150" y="545" width="390" height="40" rx="8" fill="url(#accent3)"/>
+  <text x="345" y="570" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="bold">⬇ Download PDF Export</text>
+  
+  <!-- Award Recognition Right Side -->
+  <rect x="610" y="110" width="470" height="490" rx="14" fill="#3b0764" fill-opacity="0.4" stroke="#c084fc" stroke-width="1.5"/>
+  <circle cx="845" cy="220" r="65" fill="url(#accent3)" fill-opacity="0.2" stroke="#e879f9" stroke-width="2"/>
+  <text x="845" y="235" text-anchor="middle" font-size="55">🏆</text>
+  
+  <text x="845" y="320" text-anchor="middle" fill="#ffffff" font-family="sans-serif" font-size="22" font-weight="bold">Dewang Mehta IT Awards 2025</text>
+  <text x="845" y="355" text-anchor="middle" fill="#f472b6" font-family="sans-serif" font-size="16" font-weight="bold">Top 14 Finalist Recognition</text>
+  
+  <rect x="650" y="390" width="390" height="180" rx="12" fill="#0f172a" fill-opacity="0.8" stroke="#581c87" stroke-width="1"/>
+  <text x="670" y="425" fill="#e9d5ff" font-family="sans-serif" font-size="13" font-weight="bold">Award Highlights:</text>
+  <text x="670" y="455" fill="#cbd5e1" font-family="sans-serif" font-size="12">✓ Shortlisted among top engineering projects statewide</text>
+  <text x="670" y="485" fill="#cbd5e1" font-family="sans-serif" font-size="12">✓ Developed during AI/ML Internship at Cygnet.One</text>
+  <text x="670" y="515" fill="#cbd5e1" font-family="sans-serif" font-size="12">✓ Automated PDF & Vector DB similarity innovation</text>
+</svg>

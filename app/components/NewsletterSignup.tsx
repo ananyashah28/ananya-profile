@@ -25,42 +25,37 @@ export default function NewsletterSignup() {
       } else {
         setStatus('error');
       }
-    } catch (error) {
+    } catch {
       setStatus('error');
     }
   };
 
   return (
-    <div className="mt-20 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl p-12 text-white text-center relative overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-        <div className="absolute bottom-10 left-10 w-40 h-40 bg-white/10 rounded-full blur-2xl"></div>
-      </div>
-      
-      <div className="relative z-10">
-        <h3 className="text-3xl font-bold mb-4">Stay Updated</h3>
-        <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-          Get the latest articles and insights delivered straight to your inbox
+    <div className="mt-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 dark:from-blue-900 dark:via-purple-900 dark:to-indigo-950 rounded-3xl p-8 sm:p-12 text-white text-center relative overflow-hidden shadow-2xl">
+      <div className="relative z-10 max-w-2xl mx-auto">
+        <h3 className="text-2xl sm:text-3xl font-extrabold mb-3">Stay Updated</h3>
+        <p className="text-base sm:text-lg mb-8 opacity-95 text-blue-100">
+          Get the latest articles and software insights delivered straight to your inbox
         </p>
         
         {status === 'success' ? (
-          <div className="bg-green-500/20 border border-green-400 text-green-100 px-6 py-4 rounded-xl max-w-md mx-auto">
-            ✅ Successfully subscribed! Check your email for confirmation.
+          <div className="bg-emerald-500/20 border border-emerald-400 text-emerald-100 px-6 py-4 rounded-xl max-w-md mx-auto font-semibold text-sm">
+            ✅ Successfully subscribed! Thank you.
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
             <input 
               type="email" 
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email" 
+              placeholder="Enter your email address" 
               required
-              className="flex-1 px-6 py-4 rounded-xl text-gray-900 font-medium focus:outline-none focus:ring-4 focus:ring-white/30"
+              className="flex-1 px-5 py-3.5 rounded-xl bg-white text-gray-900 placeholder-gray-500 font-medium text-sm sm:text-base focus:outline-none shadow-inner"
             />
             <button 
               type="submit"
               disabled={status === 'loading'}
-              className="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-100 transition-colors duration-300 shadow-lg hover:shadow-xl disabled:opacity-50"
+              className="bg-gray-900 hover:bg-gray-800 text-white px-7 py-3.5 rounded-xl font-bold text-sm sm:text-base transition-colors shadow-lg disabled:opacity-50 cursor-pointer whitespace-nowrap"
             >
               {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
             </button>
@@ -68,7 +63,7 @@ export default function NewsletterSignup() {
         )}
         
         {status === 'error' && (
-          <div className="bg-red-500/20 border border-red-400 text-red-100 px-6 py-4 rounded-xl max-w-md mx-auto mt-4">
+          <div className="bg-rose-500/20 border border-rose-400 text-rose-100 px-6 py-3 rounded-xl max-w-md mx-auto mt-4 text-xs font-semibold">
             ❌ Failed to subscribe. Please try again.
           </div>
         )}

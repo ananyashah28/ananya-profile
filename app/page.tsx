@@ -29,7 +29,7 @@ export default function Home() {
             
             <ScrollAnimation direction="up" delay={0.2}>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 dark:text-white mb-6 tracking-tight leading-[1.1]">
-                Hi, I'm <span className="gradient-text">Ananya Shah</span>
+                <span className="gradient-text">Ananya Shah</span>
               </h1>
             </ScrollAnimation>
             

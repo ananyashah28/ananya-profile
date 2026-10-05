@@ -174,7 +174,7 @@ export default function CertificationsClient() {
                   </h3>
 
                   <p className="text-sm text-blue-600 dark:text-blue-400 font-bold mb-3">
-                    🏢 {cert.issuer}
+                    {cert.issuer}
                   </p>
 
                   <div className="mb-4 text-xs text-gray-500 dark:text-gray-400">
@@ -201,7 +201,7 @@ export default function CertificationsClient() {
                       onClick={() => setSelectedCert(cert)}
                       className="flex-1 text-center bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white py-2.5 px-4 rounded-xl font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all cursor-pointer flex items-center justify-center gap-1.5"
                     >
-                      <span>🖼️ View Image</span>
+                      <span>View Image</span>
                       <span>→</span>
                     </button>
                   )}
@@ -212,7 +212,7 @@ export default function CertificationsClient() {
                       rel="noopener noreferrer"
                       className="flex-1 text-center bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-2.5 px-4 rounded-xl font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-1.5"
                     >
-                      <span>🔗 Verify Link</span>
+                      <span>Verify Link</span>
                       <span>→</span>
                     </a>
                   )}

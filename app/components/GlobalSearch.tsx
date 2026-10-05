@@ -29,8 +29,10 @@ export default function GlobalSearch() {
     { title: 'Awards & Recognition', url: '/awards', type: 'Page' },
     { title: 'Certifications', url: '/certifications', type: 'Page' },
     { title: 'Services', url: '/services', type: 'Page' },
+    { title: 'Engineering Case Studies', url: '/case-studies', type: 'Page' },
     { title: 'Tech Blog', url: '/blogs', type: 'Page' },
     { title: 'Contact', url: '/contact', type: 'Page' },
+    { title: 'Case Study: Project Submission & Review Portal', url: '/case-studies/project-submission-review-portal', type: 'Case Study' },
     { title: 'Engineering a White-Label PWA Engine', url: '/blogs/PWAblog', type: 'Blog' }
   ].filter(item => item.title.toLowerCase().includes(query.toLowerCase()));
 

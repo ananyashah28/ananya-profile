@@ -139,13 +139,13 @@ export default function Home() {
                 
                 <div className="flex flex-wrap gap-3 pt-2">
                   <span className="bg-blue-100/80 dark:bg-blue-950/80 text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-800/60 px-4 py-2 rounded-xl font-semibold text-xs sm:text-sm shadow-sm">
-                    🎓 BE Computer Engineering
+                    BE Computer Engineering
                   </span>
                   <span className="bg-purple-100/80 dark:bg-purple-950/80 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-purple-800/60 px-4 py-2 rounded-xl font-semibold text-xs sm:text-sm shadow-sm">
-                    🏛️ Masai School x IIT Roorkee AI/ML
+                    Masai School x IIT Roorkee AI/ML
                   </span>
                   <a href="/awards" className="bg-amber-100/80 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60 px-4 py-2 rounded-xl font-semibold text-xs sm:text-sm hover:scale-105 transition-transform shadow-sm">
-                    🏆 Dewang Mehta IT Award 2025
+                    Dewang Mehta IT Award 2025
                   </a>
                 </div>
                 
@@ -160,7 +160,7 @@ export default function Home() {
             <ScrollAnimation direction="right" delay={0.3}>
               <div className="bg-white dark:bg-gray-800/90 p-6 sm:p-8 rounded-3xl shadow-xl border border-gray-200/80 dark:border-gray-700/60 glass-panel">
                 <h3 className="text-xl font-bold mb-6 text-gray-900 dark:text-white flex items-center gap-2">
-                  <span>⚡ Core Technical Stack</span>
+                  <span>Core Technical Stack</span>
                 </h3>
                 <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
                   {[
@@ -201,7 +201,7 @@ export default function Home() {
               <div className="project-card card-glow-hover bg-white dark:bg-gray-800/90 rounded-3xl shadow-xl overflow-hidden border border-gray-200/80 dark:border-gray-700/60 p-6 sm:p-8 flex flex-col justify-between h-full">
                 <div>
                   <div className="inline-block bg-blue-600 text-white px-3.5 py-1 rounded-lg text-xs font-bold mb-4 shadow-sm">
-                    🏆 Award Winner
+                    Award Winner
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900 dark:text-white">
                     Gen-AI Powered Quotation Generation
@@ -212,10 +212,10 @@ export default function Home() {
                   
                   <div className="space-y-2 mb-6">
                     <div className="text-xs font-semibold text-blue-800 dark:text-blue-200 bg-blue-50 dark:bg-blue-950/80 px-3 py-1.5 rounded-lg border border-blue-200 dark:border-blue-800/60">
-                      🏆 Selected Top 14 at Dewang Mehta IT Awards 2025
+                      Selected Top 14 at Dewang Mehta IT Awards 2025
                     </div>
                     <div className="text-xs font-semibold text-emerald-800 dark:text-emerald-200 bg-emerald-50 dark:bg-emerald-950/80 px-3 py-1.5 rounded-lg border border-emerald-200 dark:border-emerald-800/60">
-                      🏢 Developed during AI/ML Internship at Cygnet.One
+                      Developed during AI/ML Internship at Cygnet.One
                     </div>
                   </div>
                   
@@ -238,7 +238,7 @@ export default function Home() {
               <div className="project-card card-glow-hover bg-white dark:bg-gray-800/90 rounded-3xl shadow-xl overflow-hidden border border-gray-200/80 dark:border-gray-700/60 p-6 sm:p-8 flex flex-col justify-between h-full">
                 <div>
                   <div className="inline-block bg-purple-600 text-white px-3.5 py-1 rounded-lg text-xs font-bold mb-4 shadow-sm">
-                    🚀 Featured Full-Stack System
+                    Featured Full-Stack System
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900 dark:text-white">
                     Project Submission & Review Platform
@@ -249,7 +249,7 @@ export default function Home() {
                   
                   <div className="space-y-2 mb-6">
                     <div className="text-xs font-semibold text-purple-800 dark:text-purple-200 bg-purple-50 dark:bg-purple-950/80 px-3 py-1.5 rounded-lg border border-purple-200 dark:border-purple-800/60">
-                      ⚡ FastAPI + Next.js App Router Architecture
+                      FastAPI + Next.js App Router Architecture
                     </div>
                   </div>
                   

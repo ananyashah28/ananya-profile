@@ -43,9 +43,11 @@ export default function TestimonialForm() {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-24 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-40 flex items-center gap-2"
+        className="fixed bottom-24 right-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-40 flex items-center gap-2 font-semibold"
       >
-        <span>✍️</span>
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>
         <span className="hidden sm:inline">Leave a Testimonial</span>
       </button>
     );
@@ -61,7 +63,11 @@ export default function TestimonialForm() {
 
         {success ? (
           <div className="p-8 text-center">
-            <div className="text-6xl mb-4">🎉</div>
+            <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-950/80 rounded-full flex items-center justify-center mx-auto mb-4 border border-emerald-300 dark:border-emerald-800">
+              <svg className="w-8 h-8 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">Thank You!</h3>
             <p className="text-gray-600 dark:text-gray-400">Your testimonial has been submitted for review.</p>
           </div>

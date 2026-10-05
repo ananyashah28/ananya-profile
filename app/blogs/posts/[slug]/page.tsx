@@ -2,10 +2,34 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import SocialShare from '@/app/components/SocialShare';
 import ViewCounter from '@/app/components/ViewCounter';
-import Comments from '@/app/components/Comments';
 import { calculateReadingTime } from '@/app/components/ReadingTime';
 
 const blogPosts: Record<string, { title: string; date: string; readTime: string; category: string; content: string }> = {
+  'project-submission-review-portal': {
+    title: 'Building & Deploying a Production-Grade Project Submission & Review Portal',
+    date: 'September 25, 2026',
+    readTime: '12 min read',
+    category: 'System Design',
+    content: `
+<h1>Building & Deploying a Production-Grade Project Submission & Review Portal</h1>
+<p>A deep dive into building a full-stack project management and evaluation platform with asynchronous Python APIs, modern React App Router, secure S3 object storage, and automated AWS CI/CD pipelines.</p>
+
+<h2>📌 Executive Summary</h2>
+<p>In academic institutions, bootcamp environments, and engineering teams, managing software project submissions is often surprisingly chaotic. Project reports, presentation slides, source code archives, and demo screenshots end up scattered across Google Drives, email threads, Slack channels, and local machines. Reviewers struggle to maintain context, track revision histories, or deliver structured feedback.</p>
+<p>To solve this problem, we designed and built the <strong>Project Submission & Review Portal</strong>—a centralized, full-stack web application designed for seamlessly managing project submissions, asset uploads, and review workflows.</p>
+
+<h2>🏗️ High-Level System Architecture</h2>
+<p>The architecture follows a decoupled full-stack model where the Next.js frontend handles state and rendering, communicating with a high-performance Python FastAPI backend via RESTful APIs. Data persistence is handled by PostgreSQL for relational data and Amazon S3 for binary assets.</p>
+
+<h2>🔑 Key Features</h2>
+<ul>
+  <li><strong>Role-Based Authentication:</strong> Student, Reviewer, and Admin roles with JWT refresh rotation.</li>
+  <li><strong>State Machine:</strong> Draft ➔ Submitted ➔ Under Review ➔ Approved / Changes Requested.</li>
+  <li><strong>Cloud Assets:</strong> Direct S3 uploads with MIME and file size validation.</li>
+  <li><strong>Automated AWS CI/CD:</strong> GitHub webhook ➔ AWS CodePipeline ➔ CodeBuild ➔ ECR ➔ SSM ➔ EC2 single container deployment.</li>
+</ul>
+    `
+  },
   'gen-ai-quotation-workflows': {
     title: 'Generative AI & Vector Database Workflows',
     date: 'February 20, 2025',
@@ -247,9 +271,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         <div className="prose prose-lg dark:prose-invert max-w-none text-gray-800 dark:text-gray-200" dangerouslySetInnerHTML={{ __html: post.content }} />
         
-        <div className="mt-12">
-          <Comments />
-        </div>
+
       </article>
     </div>
   );

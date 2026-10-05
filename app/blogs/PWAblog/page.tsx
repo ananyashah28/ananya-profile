@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import SocialShare from '@/app/components/SocialShare';
 import ViewCounter from '@/app/components/ViewCounter';
-import Comments from '@/app/components/Comments';
 
 export default function PWABlog() {
   const [activeSection, setActiveSection] = useState('intro');
@@ -517,9 +516,7 @@ export default function PWABlog() {
               </div>
             </article>
             
-            <div className="mt-12">
-              <Comments />
-            </div>
+
           </main>
         </div>
       </div>

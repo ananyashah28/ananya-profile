@@ -18,6 +18,9 @@ export default function Newsletter() {
     }, 1000);
   };
 
+  // Temporarily hidden/commented out
+  return null;
+  /*
   return (
     <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-700 dark:from-blue-900 dark:via-purple-900 dark:to-indigo-950 rounded-3xl p-8 sm:p-12 text-white shadow-2xl relative overflow-hidden">
       <div className="max-w-3xl mx-auto text-center relative z-10">
@@ -57,4 +60,5 @@ export default function Newsletter() {
       </div>
     </div>
   );
+  */
 }

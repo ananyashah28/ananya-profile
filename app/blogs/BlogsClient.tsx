@@ -25,7 +25,6 @@ export default function BlogsClient() {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [sortBy, setSortBy] = useState<'newest' | 'oldest' | 'shortest'>('newest');
 
-  // ONLY 1 published blog post (Add future blog posts here!)
   const posts: BlogPost[] = [
     {
       title: "Engineering a White-Label PWA Engine",
@@ -42,7 +41,7 @@ export default function BlogsClient() {
   ];
 
   const categories = ['All', 'System Design', 'AI/ML', 'Next.js', 'Backend', 'Cloud/AWS', 'Data Analytics'];
-  const popularTags = ['All', 'PWA', 'System Design', 'React', 'Offline-First', 'AI/ML', 'Next.js', 'Backend'];
+  const popularTags = ['All', 'PWA', 'System Design', 'Next.js 14', 'FastAPI', 'PostgreSQL', 'AWS S3', 'Docker', 'CI/CD'];
 
   const getCategoryCount = (category: string) => {
     if (category === 'All') return posts.length;
@@ -106,6 +105,97 @@ export default function BlogsClient() {
           </div>
         </ScrollAnimation>
 
+        {/* Search & Filter Bar Section (Commented out)
+        <div className="mb-10 sm:mb-12 space-y-6">
+          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center max-w-4xl mx-auto">
+            <div className="relative flex-1 w-full">
+              <input
+                type="text"
+                placeholder="Search articles by title, technology, or topic..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full px-5 py-3.5 pl-11 rounded-2xl bg-white/90 dark:bg-gray-800/90 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700/80 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 backdrop-blur-md transition-all placeholder:text-gray-400 dark:placeholder:text-gray-500 text-sm font-medium"
+              />
+              <svg
+                className="w-5 h-5 absolute left-4 top-3.5 text-gray-400 dark:text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map(cat => {
+              const isSelected = selectedCategory === cat;
+
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setSelectedCategory(cat)}
+                  className={`px-4.5 py-2.5 rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer ${
+                    isSelected
+                      ? 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-lg shadow-blue-500/20 scale-105'
+                      : 'bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700/60 shadow-sm'
+                  }`}
+                >
+                  {cat}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="flex flex-wrap justify-center items-center gap-2 max-w-3xl mx-auto pt-1">
+            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mr-1">Filter by Tag:</span>
+            {popularTags.map(tag => {
+              const isSelected = selectedTag === tag;
+              return (
+                <button
+                  key={tag}
+                  onClick={() => setSelectedTag(tag)}
+                  className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                    isSelected
+                      ? 'bg-blue-600 text-white shadow-sm ring-2 ring-blue-400/50'
+                      : 'bg-gray-100/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-400 hover:bg-blue-50 dark:hover:bg-blue-950 hover:text-blue-600 border border-gray-200 dark:border-gray-700/50'
+                  }`}
+                >
+                  #{tag}
+                </button>
+              );
+            })}
+          </div>
+
+          {isFiltering && (
+            <div className="flex flex-wrap items-center justify-center gap-3 pt-2 text-xs">
+              <span className="text-gray-500 dark:text-gray-400 font-semibold">Active Filters:</span>
+              {selectedCategory !== 'All' && (
+                <span className="bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-lg border border-blue-300 dark:border-blue-800 font-bold">
+                  Category: {selectedCategory}
+                </span>
+              )}
+              {selectedTag !== 'All' && (
+                <span className="bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-800 font-bold">
+                  Tag: #{selectedTag}
+                </span>
+              )}
+              {searchQuery !== '' && (
+                <span className="bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-lg border border-purple-300 dark:border-purple-800 font-bold">
+                  Search: "{searchQuery}"
+                </span>
+              )}
+              <button
+                onClick={resetAllFilters}
+                className="text-red-600 dark:text-red-400 hover:underline font-bold transition-colors cursor-pointer ml-1"
+              >
+                ✕ Clear All Filters
+              </button>
+            </div>
+          )}
+        </div>
+        */}
+
         {/* Featured Post Card (Hero Banner) */}
         {!isFiltering && featuredPost && (
           <ScrollAnimation direction="up" delay={0.2}>
@@ -114,7 +204,7 @@ export default function BlogsClient() {
                 <div className="lg:col-span-7 space-y-4">
                   <div className="flex items-center gap-3">
                     <span className="bg-gradient-to-r from-blue-600 to-purple-600 text-white text-xs font-bold px-3.5 py-1 rounded-full shadow-sm">
-                      ⭐ Featured Article
+                      Featured Article
                     </span>
                     <span className="bg-blue-50 dark:bg-blue-950/80 text-blue-700 dark:text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-200 dark:border-blue-800/60">
                       {featuredPost.category}
@@ -145,13 +235,9 @@ export default function BlogsClient() {
                   </div>
 
                   <div className="flex items-center gap-4 text-xs font-semibold text-gray-500 dark:text-gray-400 pt-2">
-                    <span className="flex items-center gap-1.5">
-                      <span>🗓️</span> {featuredPost.date}
-                    </span>
+                    <span>{featuredPost.date}</span>
                     <span>•</span>
-                    <span className="flex items-center gap-1.5">
-                      <span>⏱️</span> {featuredPost.readTime}
-                    </span>
+                    <span>{featuredPost.readTime}</span>
                   </div>
 
                   <div className="pt-4">
@@ -166,7 +252,11 @@ export default function BlogsClient() {
 
                 <div className="lg:col-span-5">
                   <div className={`relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-gradient-to-br ${featuredPost.gradient} p-8 flex flex-col justify-between text-white shadow-xl border border-white/20 group-hover:scale-[1.02] transition-transform duration-500`}>
-                    <div className="text-5xl">{featuredPost.icon}</div>
+                    <div className="p-3 bg-white/10 backdrop-blur-md rounded-xl w-fit">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                    </div>
                     <div>
                       <div className="text-xs font-mono uppercase tracking-widest text-white/80 mb-1">Architecture & Engineering</div>
                       <div className="text-xl font-bold">{featuredPost.title}</div>
@@ -177,120 +267,6 @@ export default function BlogsClient() {
             </div>
           </ScrollAnimation>
         )}
-
-        {/* Search, Sort & Filter Bar Section */}
-        <div className="mb-10 sm:mb-12 space-y-6">
-          <div className="flex flex-col sm:flex-row gap-4 justify-between items-center max-w-4xl mx-auto">
-            {/* Search Input */}
-            <div className="relative flex-1 w-full">
-              <input
-                type="text"
-                placeholder="Search articles by title, keyword, or tag (#PWA, #React)..."
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-5 py-3.5 pl-11 rounded-2xl bg-white/90 dark:bg-gray-800/90 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700/80 shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 backdrop-blur-md transition-all placeholder:text-gray-400 dark:placeholder:text-gray-500 text-sm font-medium"
-              />
-              <svg
-                className="w-5 h-5 absolute left-4 top-3.5 text-gray-400 dark:text-gray-500"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
-            </div>
-
-            {/* Sort Select */}
-            <div className="flex items-center gap-2 shrink-0 self-end sm:self-auto">
-              <span className="text-xs font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">Sort:</span>
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as any)}
-                className="px-4 py-3 rounded-2xl bg-white/90 dark:bg-gray-800/90 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-700/80 shadow-md text-xs font-bold focus:outline-none focus:ring-2 focus:ring-blue-500 backdrop-blur-md transition-all cursor-pointer"
-              >
-                <option value="newest">📅 Newest First</option>
-                <option value="oldest">⌛ Oldest First</option>
-                <option value="shortest">⏱️ Shortest Read</option>
-              </select>
-            </div>
-          </div>
-
-          {/* Category Filter Pills with Dynamic Counts */}
-          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3">
-            {categories.map(cat => {
-              const count = getCategoryCount(cat);
-              const isSelected = selectedCategory === cat;
-
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`px-4.5 py-2.5 rounded-2xl font-bold text-xs sm:text-sm transition-all duration-300 cursor-pointer flex items-center gap-2 ${
-                    isSelected
-                      ? 'bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white shadow-lg shadow-blue-500/20 scale-105'
-                      : 'bg-white/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700/60 shadow-sm'
-                  }`}
-                >
-                  <span>{cat}</span>
-                  <span className={`px-2 py-0.5 rounded-full text-[11px] ${
-                    isSelected ? 'bg-white/20 text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400'
-                  }`}>
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Popular Tag Quick Filters */}
-          <div className="flex flex-wrap justify-center items-center gap-2 max-w-3xl mx-auto pt-1">
-            <span className="text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mr-1">Filter by Tag:</span>
-            {popularTags.map(tag => {
-              const isSelected = selectedTag === tag;
-              return (
-                <button
-                  key={tag}
-                  onClick={() => setSelectedTag(tag)}
-                  className={`px-3 py-1 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
-                    isSelected
-                      ? 'bg-blue-600 text-white shadow-sm ring-2 ring-blue-400/50'
-                      : 'bg-gray-100/80 dark:bg-gray-800/80 text-gray-600 dark:text-gray-400 hover:bg-blue-50 dark:hover:bg-blue-950 hover:text-blue-600 border border-gray-200 dark:border-gray-700/50'
-                  }`}
-                >
-                  #{tag}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Active Filter Summary Bar */}
-          {isFiltering && (
-            <div className="flex flex-wrap items-center justify-center gap-3 pt-2 text-xs">
-              <span className="text-gray-500 dark:text-gray-400 font-semibold">Active Filters:</span>
-              {selectedCategory !== 'All' && (
-                <span className="bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 px-3 py-1 rounded-lg border border-blue-300 dark:border-blue-800 font-bold">
-                  Category: {selectedCategory}
-                </span>
-              )}
-              {selectedTag !== 'All' && (
-                <span className="bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 px-3 py-1 rounded-lg border border-amber-300 dark:border-amber-800 font-bold">
-                  Tag: #{selectedTag}
-                </span>
-              )}
-              {searchQuery !== '' && (
-                <span className="bg-purple-100 dark:bg-purple-950 text-purple-800 dark:text-purple-300 px-3 py-1 rounded-lg border border-purple-300 dark:border-purple-800 font-bold">
-                  Search: "{searchQuery}"
-                </span>
-              )}
-              <button
-                onClick={resetAllFilters}
-                className="text-red-600 dark:text-red-400 hover:underline font-bold transition-colors cursor-pointer ml-1"
-              >
-                ✕ Clear All Filters
-              </button>
-            </div>
-          )}
-        </div>
 
         {/* Blog Posts Grid */}
         {gridPosts.length > 0 && (
@@ -310,7 +286,11 @@ export default function BlogsClient() {
                     {/* Card Visual Banner Header */}
                     <div className={`relative aspect-[16/9] w-full rounded-2xl overflow-hidden bg-gradient-to-br ${post.gradient} p-5 flex flex-col justify-between text-white mb-5 shadow-md group-hover:scale-105 transition-transform duration-500`}>
                       <div className="flex justify-between items-start">
-                        <span className="text-3xl">{post.icon}</span>
+                        <div className="p-2 bg-white/10 backdrop-blur-md rounded-lg">
+                          <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                          </svg>
+                        </div>
                         <span className="bg-black/40 backdrop-blur-md px-2.5 py-1 rounded-full text-[11px] font-bold border border-white/20">
                           {post.category}
                         </span>
@@ -319,7 +299,7 @@ export default function BlogsClient() {
                     </div>
 
                     <div className="flex items-center gap-2 text-xs font-semibold text-blue-600 dark:text-blue-400 mb-2">
-                      <span>🗓️ {post.date}</span>
+                      <span>{post.date}</span>
                     </div>
 
                     <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
@@ -368,7 +348,6 @@ export default function BlogsClient() {
         {/* Empty state when filtering yields no results */}
         {isFiltering && filteredPosts.length === 0 && (
           <div className="text-center py-16 bg-white dark:bg-gray-800/60 rounded-3xl border border-gray-200 dark:border-gray-700/60 mb-16">
-            <div className="text-5xl mb-4">📝</div>
             <p className="text-gray-600 dark:text-gray-400 text-lg mb-2">No articles found matching your criteria.</p>
             <button
               onClick={resetAllFilters}
@@ -379,7 +358,7 @@ export default function BlogsClient() {
           </div>
         )}
 
-        <NewsletterSignup />
+        {/* <NewsletterSignup /> */}
       </div>
     </div>
   );

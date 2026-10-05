@@ -62,8 +62,10 @@ function ProjectCardBanner({
             </span>
           </div>
           <div className="my-auto text-center">
-            <div className="text-2xl mb-1 opacity-90">
-              {project.category === 'AI/ML' ? '🤖' : project.category === 'RL' ? '🏎️' : project.category === 'Full-Stack' ? '💻' : '🐍'}
+            <div className="w-10 h-10 mx-auto mb-2 p-2 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center">
+              <svg className="w-6 h-6 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
             </div>
             <div className="text-xs font-bold text-gray-700 dark:text-gray-300 tracking-wide font-mono">
               {project.category} System
@@ -91,7 +93,7 @@ function ProjectCardBanner({
       
       {/* Top Left: Enlarge Badge */}
       <div className="absolute top-2.5 left-2.5 z-10 bg-black/70 hover:bg-black/90 backdrop-blur-md text-white text-[11px] font-bold px-2.5 py-1 rounded-lg border border-white/20 flex items-center gap-1 shadow-md transition-all">
-        <span>🔍 Click to Enlarge</span>
+        <span>Click to Enlarge</span>
       </div>
 
       {/* Top Right: Slide Counter Badge */}
@@ -494,7 +496,7 @@ export default function ProjectsClient() {
                     <div className="flex flex-wrap items-center gap-2 mb-4">
                       {project.award && (
                         <span className="bg-amber-100 text-amber-900 dark:bg-amber-950/80 dark:text-amber-200 px-3 py-1 rounded-lg text-xs font-bold border border-amber-300 dark:border-amber-800">
-                          🏆 {project.award}
+                          {project.award}
                         </span>
                       )}
                       {project.company && (
@@ -504,7 +506,7 @@ export default function ProjectsClient() {
                       )}
                       {isFeatured && !project.award && (
                         <span className="bg-blue-600 text-white px-3 py-1 rounded-lg text-xs font-bold shadow-sm">
-                          ⭐ Featured Project
+                          Featured Project
                         </span>
                       )}
                       <span className="bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 px-2.5 py-0.5 rounded-md text-xs font-semibold border border-indigo-200 dark:border-indigo-800/60">

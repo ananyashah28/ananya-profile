@@ -30,6 +30,9 @@ export default function NewsletterSignup() {
     }
   };
 
+  // Temporarily hidden/commented out
+  return null;
+  /*
   return (
     <div className="mt-16 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 dark:from-blue-900 dark:via-purple-900 dark:to-indigo-950 rounded-3xl p-8 sm:p-12 text-white text-center relative overflow-hidden shadow-2xl">
       <div className="relative z-10 max-w-2xl mx-auto">
@@ -70,4 +73,5 @@ export default function NewsletterSignup() {
       </div>
     </div>
   );
+  */
 }

@@ -168,13 +168,13 @@ export default function Experience() {
                             {role.title}
                           </h3>
                           {role.location && (
-                            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium flex items-center gap-1.5 mt-1">
-                              <span>📍</span> {role.location}
+                            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 font-medium mt-1">
+                              {role.location}
                             </p>
                           )}
                         </div>
-                        <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-700 dark:text-blue-300 bg-blue-100/80 dark:bg-blue-950/90 px-3.5 py-1.5 rounded-full border border-blue-300/80 dark:border-blue-800/80 self-start sm:self-auto shadow-sm">
-                          🗓️ {role.period}
+                        <span className="inline-flex items-center text-xs sm:text-sm font-bold text-blue-700 dark:text-blue-300 bg-blue-100/80 dark:bg-blue-950/90 px-3.5 py-1.5 rounded-full border border-blue-300/80 dark:border-blue-800/80 self-start sm:self-auto shadow-sm">
+                          {role.period}
                         </span>
                       </div>
 
@@ -184,8 +184,8 @@ export default function Experience() {
 
                       {/* Certificate Pill if available */}
                       {role.certificate && (
-                        <div className="inline-flex items-center gap-2 bg-emerald-100/70 dark:bg-emerald-950/90 text-emerald-900 dark:text-emerald-200 px-4 py-1.5 rounded-xl text-xs sm:text-sm font-bold border border-emerald-300 dark:border-emerald-800">
-                          📜 {role.certificate}
+                        <div className="inline-flex items-center bg-emerald-100/70 dark:bg-emerald-950/90 text-emerald-900 dark:text-emerald-200 px-4 py-1.5 rounded-xl text-xs sm:text-sm font-bold border border-emerald-300 dark:border-emerald-800">
+                          {role.certificate}
                         </div>
                       )}
 
@@ -245,8 +245,8 @@ export default function Experience() {
             {/* Ahmedabad Institute Of Technology */}
             <div className="bg-gradient-to-br from-gray-50 to-blue-50/30 dark:from-gray-900/80 dark:to-slate-900/80 rounded-2xl p-6 sm:p-8 border border-gray-200/80 dark:border-gray-700/60">
               <div className="flex flex-col sm:flex-row items-start gap-5">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg ring-4 ring-purple-500/10 shrink-0">
-                  🎓
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center text-white text-xl font-bold shadow-lg ring-4 ring-purple-500/10 shrink-0">
+                  BE
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1.5">
@@ -280,8 +280,8 @@ export default function Experience() {
             {/* Indian Institute of Technology, Roorkee */}
             <div className="bg-gradient-to-br from-gray-50 to-purple-50/30 dark:from-gray-900/80 dark:to-slate-900/80 rounded-2xl p-6 sm:p-8 border border-gray-200/80 dark:border-gray-700/60">
               <div className="flex flex-col sm:flex-row items-start gap-5">
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg ring-4 ring-indigo-500/10 shrink-0">
-                  🏛️
+                <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-indigo-600 rounded-2xl flex items-center justify-center text-white text-xl font-bold shadow-lg ring-4 ring-indigo-500/10 shrink-0">
+                  IIT
                 </div>
                 <div className="flex-1">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-1.5">

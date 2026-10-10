@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import AnimatedCounter from './components/AnimatedCounter';
 import Newsletter from './components/Newsletter';
 import DynamicTestimonials from './components/DynamicTestimonials';
@@ -241,20 +242,23 @@ export default function Home() {
                     Featured Full-Stack System
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900 dark:text-white">
-                    Project Submission & Review Platform
+                    Collaborative Project Workspace & Review Platform
                   </h3>
                   <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-5 leading-relaxed">
-                    Full-stack system for managing student project submissions, automated code review feedback, and grading workflows built with Next.js frontend and FastAPI backend.
+                    Full-stack collaborative workspace featuring interactive Kanban task boards, bug defect tracking, billable timesheets, S3 asset pipelines, and automated zero-downtime AWS CI/CD deployments.
                   </p>
                   
                   <div className="space-y-2 mb-6">
                     <div className="text-xs font-semibold text-purple-800 dark:text-purple-200 bg-purple-50 dark:bg-purple-950/80 px-3 py-1.5 rounded-lg border border-purple-200 dark:border-purple-800/60">
-                      FastAPI + Next.js App Router Architecture
+                      FastAPI + Next.js 14 App Router • AWS EC2 & CI/CD
+                    </div>
+                    <div className="text-xs font-semibold text-emerald-800 dark:text-emerald-200 bg-emerald-50 dark:bg-emerald-950/80 px-3 py-1.5 rounded-lg border border-emerald-200 dark:border-emerald-800/60">
+                      Kanban Task Boards • Bug Tracker • Timesheets
                     </div>
                   </div>
                   
                   <div className="flex flex-wrap gap-2 mb-6">
-                    {['TypeScript', 'Next.js', 'FastAPI', 'Python', 'TailwindCSS'].map((tech) => (
+                    {['TypeScript', 'Next.js 14', 'FastAPI', 'PostgreSQL', 'AWS S3', 'Docker', 'Supervisor'].map((tech) => (
                       <span key={tech} className="tech-tag">
                         {tech}
                       </span>
@@ -262,9 +266,40 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <a href="https://github.com/ananyashah28/project-submission-and-review-project" target="_blank" rel="noopener noreferrer" className="w-full text-center py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300/80 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white dark:border-slate-700 font-semibold block transition-colors shadow-sm">
-                  View Code on GitHub
-                </a>
+                <div className="space-y-2.5 pt-2">
+                  <div className="grid grid-cols-2 gap-2.5">
+                    <Link
+                      href="/case-studies/project-submission-review-portal"
+                      className="py-3 px-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm font-semibold transition-colors shadow-sm text-center flex items-center justify-center gap-1.5"
+                    >
+                      <span>Read Case Study</span>
+                      <span>→</span>
+                    </Link>
+                    <a
+                      href="https://drive.google.com/file/d/1G9nv4FdehkZg6pcW9DAQDTTGFvf12uxC/view?usp=sharing"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="py-3 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold transition-colors shadow-sm text-center flex items-center justify-center gap-1.5"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                      <span>Watch Demo</span>
+                    </a>
+                  </div>
+                  <a
+                    href="https://github.com/ananyashah28/project-submission-and-review-project"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-center py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-300/80 dark:bg-slate-800 dark:hover:bg-slate-700 dark:text-white dark:border-slate-700 text-xs sm:text-sm font-semibold block transition-colors shadow-sm flex items-center justify-center gap-2"
+                  >
+                    <svg className="w-4 h-4 fill-currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    <span>View Code on GitHub</span>
+                  </a>
+                </div>
               </div>
             </ScrollAnimation>
           </div>

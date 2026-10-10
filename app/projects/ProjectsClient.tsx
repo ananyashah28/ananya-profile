@@ -12,6 +12,8 @@ interface Project {
   type: string;
   github: string;
   live?: string;
+  demo?: string;
+  caseStudy?: string;
   featured?: boolean;
   award?: string;
   company?: string;
@@ -170,11 +172,17 @@ export default function ProjectsClient() {
     },
     {
       title: 'Project Submission & Review Platform',
-      description: 'Full-stack platform for managing student project submissions, automated review feedback, and grading workflows featuring Next.js frontend, FastAPI backend, and AWS Cloud hosting.',
-      tech: ['TypeScript', 'Next.js', 'FastAPI', 'AWS Cloud', 'Python', 'TailwindCSS', 'Full-Stack'],
+      description: 'Production-grade collaborative project workspace & submission platform featuring Kanban task boards, bug defect tracking, billable timesheets, S3 asset pipelines, and automated AWS EC2 CI/CD deployment.',
+      tech: ['TypeScript', 'Next.js 14', 'FastAPI', 'PostgreSQL', 'AWS S3', 'Docker', 'TailwindCSS'],
       category: 'Full-Stack',
       type: 'Full-Stack',
       github: 'https://github.com/ananyashah28/project-submission-and-review-project',
+      demo: 'https://drive.google.com/file/d/1G9nv4FdehkZg6pcW9DAQDTTGFvf12uxC/view?usp=sharing',
+      caseStudy: '/case-studies/project-submission-review-portal',
+      images: [
+        '/images/case-studies/project-submission-portal/login-interface.png',
+        '/images/case-studies/project-submission-portal/register-interface.png'
+      ],
       featured: true
     },
     {
@@ -534,7 +542,7 @@ export default function ProjectsClient() {
                     </div>
 
                     {/* Actions */}
-                    <div className="flex items-center gap-3 pt-2">
+                    <div className="flex flex-wrap items-center gap-2 pt-2">
                       <a
                         href={project.github}
                         target="_blank"
@@ -546,6 +554,31 @@ export default function ProjectsClient() {
                         </svg>
                         View Code
                       </a>
+                      {project.caseStudy && (
+                        <Link
+                          href={project.caseStudy}
+                          className="py-2.5 px-3 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-sm font-semibold transition-colors shadow-sm flex items-center justify-center gap-1.5 whitespace-nowrap"
+                        >
+                          <span>Case Study</span>
+                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </Link>
+                      )}
+                      {project.demo && (
+                        <a
+                          href={project.demo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="py-2.5 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold transition-colors shadow-sm flex items-center justify-center gap-1.5 whitespace-nowrap"
+                        >
+                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span>Demo</span>
+                        </a>
+                      )}
                       {project.live && (
                         <a
                           href={project.live}
